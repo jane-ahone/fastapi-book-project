@@ -26,9 +26,7 @@ jobs:
           ssh -i ~/.ssh/fastapi-key.pem ubuntu@13.60.41.102 <<'EOF'
           cd /opt/fastapi-book-project
           git config --global --add safe.directory /opt/fastapi-book-project
-          git stash
           git pull origin main --rebase
-          git stash pop || echo "No stashed changes to apply."
           source venv/bin/activate
           pip install -r requirements.txt
           sudo systemctl restart fastapi
