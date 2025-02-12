@@ -2,7 +2,8 @@ name: CD-Pipeline
 
 on:
   push:
-    branches: -main
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -21,6 +22,6 @@ jobs:
           cd /opt/fastapi-book-project
           git pull origin main
           source venv/bin/activate
-          pip install -r requirements.tx
+          pip install -r requirements.txt
           sudo systemctl restart fastapi
           EOF
