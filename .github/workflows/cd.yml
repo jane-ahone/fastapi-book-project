@@ -25,7 +25,6 @@ jobs:
         run: |
           ssh -i ~/.ssh/fastapi-key.pem ubuntu@13.60.41.102 <<'EOF'
           cd /opt/fastapi-book-project
-          git config --global --add safe.directory /opt/fastapi-book-project
           git pull origin main
           source venv/bin/activate
           pip install -r requirements.txt
