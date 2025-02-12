@@ -16,6 +16,9 @@ jobs:
 
       - name: Set up SSH Key
         run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.AWS_SSH_PRIVATE_KEY }}" > ~/.ssh/fastapi-key.pem
+          chmod 600 ~/.ssh/fastapi-key.pem
           ssh-keyscan -H 13.60.41.102 >> ~/.ssh/known_hosts
 
       - name: Deploy Application
